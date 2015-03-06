@@ -1,0 +1,63 @@
+include mixins/thumbs.jade
+include mixins/slideshow-slide.jade
+include mixins/mixin-lorem-ipsum.jade
+include mixins/placeholder-image.jade
+include mixins/header.jade
+
++header_right_3('events/banner-1.jpg', 'Events', 'Upcoming Events', 'Read More', '#', 'Jarmo Phojaniemi')
+
+
+
+
+section.rel
+  .sw.pr2
+    .cw
+      +h3('6 m1', '6', '6') Upcoming Events
+      slick(infinite=true slides-to-show=1 slides-to-scroll=1).slick-carousel.mb0
+        .wrap
+          +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+            p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+          +thumb_12_14('events/event-banner-1.png', '#/single-event', 'Event 1', 'November 15, 2015')
+
+        .wrap
+          +thumb_12_14('events/event-banner-1.png', '#/single-event', 'Event 1', 'November 15, 2015')
+          +thumb_12_14('events/event-banner-1.png', '#/single-event', 'Event 1', 'November 15, 2015')
+
+
+
+
+
+
++section().bg-black.white
+  +figure('11 14')
+    p Trade shows
+    p Presentations
+    p partners
+    p visionaries
+
+//- section
+//-   div.sw
+//-     div.cw
+//-       +poxy('12 118')
+//-         .beta.txa-6.tx-r Past Chimera Events
+//-       +poxy('12 118')
+//-         .beta.txa-6  Past Visionary Events
+
++section()
+  +h3('6 m1', '6', '6') Past Events
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…
+  +thumb_12_14('events/event-banner-1.jpg', '#/single-event', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'November 15, 2015')
+    p Go behind the scenes and explore this dynamic designer and client collaboration executing against the brand’s “Clicquot on The Snow” campaign — a mobile champagne bar featured at Aspen Skiing…

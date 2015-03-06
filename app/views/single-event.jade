@@ -1,0 +1,63 @@
+include mixins/sections.jade
+include mixins/header.jade
+include mixins/mixin-lorem-ipsum.jade
+include mixins/dev.jade
+
++header_right_3('events/event-banner-1.jpg', 'ART OF WINTER WITH MIKE ARZT & MOET HENNESSEY USA', 'Details', 'Read More', '#', 'copywrite')
+  p Date:
+  p Location:
+  p Time:
+
+
++section().article
+  +pox(12, 12, 11, 11, 11)
+    +p('6', '5', '6', '6', '6')
+      +lipsum(100, "words")
+
+    .mt1
+      script(type='text/javascript').
+        var disqus_shortname = 'chimeralighting';
+        (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+
+      #disqus_thread
+
+
+      script(type='text/javascript').
+          var disqus_shortname = 'chimeralighting';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+
+      noscript
+        | Please enable JavaScript to view the
+        a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+
+      a.dsq-brlink(href='http://disqus.com')
+        | comments powered by
+        span.logo-disqus Disqus
+
+
+
+  +poxy('14 14 qoxy', '14 14 qoxy', '11 14 pox', '11 14 pox', '11 14 pox')
+    .wrap
+      +pox('p11', 'p11', '12', '12', '11')
+        +h3('4', '4', '4', '4', '1') Other Events
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+
+
+      +poxy('p11', 'p11', '12', '12', '11')
+        +h3('4 mb2', '4', '4', '4', '1') Twitter Feed

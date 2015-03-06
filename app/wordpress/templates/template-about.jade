@@ -1,0 +1,38 @@
+:php
+  /**
+   * Chimera template for displaying Archives
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+  get_template_part( 'part-header', 'empty' );
+
+  $args = array(
+    'post_parent' => poxy_id(),
+    'orderby' => 'menu_order',
+    'post_type' => array('page')
+  );
+
+  $sections = new WP_Query( $args );
+  while ($sections->have_posts()) : $sections->the_post();
+    get_template_part('part-section');
+  endwhile;
+  wp_reset_query();
+
+section.org-icons.ng-scope
+  .sw
+    .cw
+      .rel.poxya12a_14.poxyb12b_14.poxyc12c_14.poxyd11d_12.poxye11e_12
+        .wrap
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-1-64.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-2-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-3-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-4-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-5-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-6-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-7-300.png)')
+          figure.rel.image.poxya18a_18.poxyb18b_18.poxyc18c_18.poxyd14d_14.poxye14e_14.bgp-cc.bgs-contain(style!='background-image: url(<?php blogInfo("url"); ?>/images/about/org-8-300.png)')
+      .rel.poxya14a_14.poxyb12b_14.poxyc12c_12.12dpoxd_11.12epoxe_11
+        .title.text.beta Organizations We Support

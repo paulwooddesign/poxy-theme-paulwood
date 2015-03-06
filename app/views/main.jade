@@ -1,0 +1,228 @@
+include mixins/thumbs.jade
+include mixins/slideshow-slide.jade
+include mixins/mixin-lorem-ipsum.jade
+include mixins/placeholder-image.jade
+include mixins/header.jade
+
+
+section.home-slideshow.clear
+  .sw.m0
+    slick.mb0
+      div
+        +slideshow_slide('home/banner-4.jpg rc', 'Featured Workshop', 'Shoot The Centerfold', 'Read More', '#', 'Jarmo Phojaniemi')
+          p
+            +lipsum(18, "words")
+      div
+        +slideshow_slide('home/banner-2.jpg', 'Mike Arzt', 'Featured Visonary', 'Read More', '#', 'Mike Arzt')
+          p
+            +lipsum(18, "words")
+
+      div
+        +slideshow_slide('home/banner-1.jpg rc', 'Jarmo Phojaniemi', 'Chimera co-creates #JarmoStyle', 'Read More', '#', 'Jarmo Phojaniemi')
+          p
+            +lipsum(18, "words")
+
+
+
++section().featured-pages
+  +thumb_1('home/visionaries-thumb.jpg lc 100', '#/visionaries', 'Visionaries')
+  +thumb_1('home/events-thumb.jpg cc 100', '#/events', 'Events')
+  +thumb_1('home/about-thumb.jpg cc 100', '#/about', 'About')
+  +thumb_1('home/blog-thumb.jpg cc 100', '#/blog', 'Blog')
+
+
+//- section.new-products.clear.shadow-t.mt0.rel
+//-   //- .paxy.fill.shadow-l.z6
+//-   .sw.pr2.pb1
+//-     .cw
+//-       .poxya14a_14poxyb14b_14poxyc12b_14.pb1.mb0
+//-         .qoxya11a_14qoxyb11b_14poxyc11c_14.pb1.mb0
+//-           .qoxya14a_14qoxyb14b_14poxyc12c_14
+//-             .beta.tx-l.mb0.mt1 <span class="color-accent">New</span> From Chimera
+//-             p.mr1.mb1
+//-               +lipsum(20, "words")
+//-
+//-             a(href="#")
+//-               button.zeta.pt4.pb4.pr2.pl2 All Products
+//-
+//-
+//-
+//-       .poxya34a_14poxyb34b_14.rel
+//-         slick(infinite=true slides-to-show=1 slides-to-scroll=1).slick-carousel.mb0
+//-           div
+//-             section.a34a_14b34b_14c11c_13.rel.tx-c
+//-               figure.poxya14a_14poxyb14b_14c13c_13.mr1.rel
+//-                 a(href="#/single-product")
+//-                   .poxyap11poxybp11poxyap11.mt3.gamma LED Bank
+//-                   p
+//-                     +lipsum(3, "words")
+//-                   +image('home/led-1.png','14 14 baxy')
+//-                   //- .baxya14a_15.baxyb14b_15.baxyc13c_15.bg-contain(style='background-image: url(images/home/led-1.png);')
+//-
+//-               figure.poxya14a_14poxyb14b_14c13c_13.mr1.rel
+//-                 a(href="#/single-product")
+//-                   .poxyap11poxybp11poxyap11.mt3.gamma LED Bank
+//-                   p
+//-                     +lipsum(3, "words")
+//-                   .baxya14a_15.baxyb14b_15.baxyc13c_15.bg-contain(style='background-image: url(images/home/led-1.png);')
+//-
+//-               figure.poxya14a_14poxyb14b_14c13c_13.mr1.rel
+//-                 a(href="#/single-product")
+//-                   .poxyap11poxybp11poxyap11.mt3.gamma LED Bank
+//-                   p
+//-                     +lipsum(3, "words")
+//-                   .baxya14a_15.baxyb14b_15.baxyc13c_15.bg-contain(style='background-image: url(images/home/led-1.png);')
+
+
+
+
+
+
+
+
+//-
+//- section.mt0.rel.clear
+//-   //- .paxy.fill.shadow-l.z6
+//-   .sw.pr2
+//-     .cw
+//-       slick(infinite=false slides-to-show=1 slides-to-scroll=1).mb1
+//-         div
+//-           section.a11a_18b_12c_12d_12e_12.rel
+//-             +thumb_3('#/chimera', 'WPPI')(style='background-image: url(images/events/event-logo-2.png);')
+//-             +thumb_3_m0('#/chimera', 'SHOOT THE CENTERFOLD')(style='background-image: url(images/home/visionaries-thumb.jpg);')
+//-
+//-         div
+//-           section.a11a_18b_12c_12d_12e_12.rel
+//-             +thumb_3('#/chimera', 'NAB 2015')(style='background-image: url(images/events/event-logo-1.png);')
+//-             +thumb_3_m0('#/chimera', 'CINEGEAR')(style='background-image: url(images/home/visionaries-thumb.jpg);')
+//-
+//-
+//-
+//-
+
+
+
+
+//- section.clear.rel.ofh.bg-gray(style='background-image: url(images/home/events-bg2.jpg);')
+//-   //- .paxy.fill.shadow-t
+//-   .sw
+//-     .cw
+//-       .poxya14poxyb14
+//-         .wrap.bg-contain
+//-           .poxya14.mt1.tx-light
+//-             .beta Upcoming Events
+//-             p
+//-               +lipsum(20, "words")
+//-
+//-           +thumb_1('#/single-event', 'MARCH 21, 2015')(style='background-image: url(images/events/event-logo-2.png);')
+//-           +thumb_1('#/single-event', 'APRIL 13, 2015')(style='background-image: url(images/events/event-logo-1.png);')
+//-       .poxya12a_12.mb0.rel
+//-         .paxya11a_12.bgpcc
+
+
+
+
+//- section
+//-   .sw
+//-     .cw
+//-       .poxya34a_14
+//-         .wrap
+//-           figure.a34a_14
+//-
+//-       .poxya14a_18
+//-         .beta.mb2 Chimera Contest
+//-         p
+//-           +lipsum(20, "words")
+
+//- +section().tx-c
+//-   +h3('6', '6', '6') <span class="color-accent">New</span> From Chimera
+
+
+section.new-products.shadow-t.mb1.rel.tx-c
+  .sw.pr2
+    .cw
+      +h3('6 m1', '6', '6') <span class="color-accent">New</span> From Chimera
+      slick(infinite=true slides-to-show=1 slides-to-scroll=1).slick-carousel.mb0
+        .wrap
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+        .wrap
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+          +image('home/led-1.png', '14')
+            a(href="#/taxonomy-product-child").paxy.fill
+              //- +h3('1') LED Bank
+
+
+
+
+
+section.tx-l
+  .sw
+    .cw
+      .poxya14poxyb14c11.mb0
+        .beta Speed Ring Finder
+        p.mb1
+          +lipsum(6, "words")
+
+      .poxya34poxyb34poxyc11.mb0
+        .wrap
+          figure.a16a_112b16b_112c14c_112
+            .oxy Type
+          figure.a16a_112b16b_112c14c_112
+            .oxy Brand
+          figure.a16a_112b16b_112c14c_112
+            .oxy Model
+          figure.a16a_112b16b_112c14c_112
+            button.fill.br25 Search
+
+
+
+
++section()
+  figure.a14a_18b14b_18c14c_18d14d_18e12e_12.bg-black
+    a(href="http://chimeraimaging.com/" target="_blank").oxy.fill.bg-contain(style='background-image: url(images/home/chimera-imaging-solutions-logo.jpg);')
+  figure.a14a_18b14b_18c14c_18d14d_18e12e_12
+    a(href="http://usa.hensel.eu/" target="_blank").oxy.fill.bg-contain(style='background-image: url(images/home/hensel-usa-logo.png);')
+  figure.a14a_18b14b_18c14c_18d14d_18e12e_12.bg-black 1/2
+    span.paxyap11ap_11
+  figure.a14a_18b14b_18c14c_18d14d_18e12e_12.bg-black 1/2
+    span.paxyap11ap_11
+
+
+
+
+
+//- section.home-slideshow.clear
+//-   .sw.m0
+//-     slick.mb0
+//-
+//-       +slideshow_slide('Mike Arzt', 'Featured Visonary', 'Read More', '#', 'Mike Arzt')(style='background-image: url(images/home/banner-2.jpg);')
+//-         +lipsum(18, "words")
+//-
+//-       +slideshow_slide_right('Main Title longer', 'Sub Title', 'Button-title', '#', 'Copywrite')(style='background-image: url(images/home/banner-3.jpg);')
+//-         +lipsum(18, "words")

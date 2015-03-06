@@ -1,0 +1,359 @@
+// poxy_dev = true
+// poxy_skin_3d = false
+// /////////////////////////////////
+// // DESIGN SETTINGS
+// /////////////////////////////////
+// body_color = #ccc
+// body_color_light = #ccc
+// header_bg = #222
+// accent = #dda100
+// black = #141415
+// body_bg = #222
+// /////////////////////////////////
+// // GRID Ratio Settings (Denominator)
+// // Zone Numerators array ( 1/ $ratio)
+// /////////////////////////////////
+//
+// // Development - Include all Ratios
+// $ratio-range = (1..32)
+//
+// $numerators-A = (A 1) (A 2) (A 3) (A 4)
+// $numerators-B = (B 1) (B 2) (B 3)
+// $numerators-C = (C 1) (C 2) (C 3)
+// $numerators-D = (D 1) (D 2) (D 3)
+// $numerators-E = (E 1) (E 2) (E 3)
+//
+// /////////////////////////////////
+// // GRID SETTINGS
+// /////////////////////////////////
+//
+// $gx-A = 27
+// $gy-A = 36
+// $gs-A = 4
+//
+// $gx-B = 27
+// $gy-B = 36
+// $gs-B = 1
+//
+// $gx-C = 27
+// $gy-C = 36
+// $gs-C = 1
+//
+// $gx-D = 12
+// $gy-D = 18
+// $gs-D = .06
+//
+// $gx-E = 12
+// $gy-E = 18
+// $gs-E = .06
+//
+//
+// /////////////////////////////////
+// // ZONE/BREAKPOINT SETTINGS
+// /////////////////////////////////
+//
+// $max-copy-width = 20
+// $zone-a-min = 16
+//
+// $zone-b-max = 16
+// $zone-b-min = 12
+//
+// $zone-c-max = 12
+// $zone-c-min = 9
+//
+// $zone-d-max = 9
+// $zone-d-min = 6
+//
+// $zone-e-max = 6
+// $zone-e-min = 4
+//
+//
+// @import 'poxy/poxy'
+
+
+// @import 'poxy/_development'
+
+
+/////////////////////////////////
+// Base Colors
+/////////////////////////////////
+*
+  background-size cover
+
+
+html
+  background rgba(#222, 1)
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+
+
+body
+  font-family 'Futura Book', 'Lato' sans-serif
+  color #333
+  // text-align justify
+
+
+.header
+  background #fff
+
+  button
+    text-align center
+    letter-spacing .2em
+    text-transform uppercase
+    color #333
+    background-color transparent
+
+  button:hover
+    background #ccc
+
+.container
+  background-color #fff
+
+
+
+
+button
+  background-color #03a9f4
+  color #fff
+  letter-spacing .2rem
+  text-transform uppercase
+
+a
+  color #333
+
+.color-accent
+  color #03a9f4 !important
+
+.bg-accent
+  background-color #03a9f4 !important
+
+.logo
+  background-image url(../../images/logo.png)
+
+
+
+
+.tx-light
+  color #ccc !important
+  a
+    color #ccc !important
+
+
+/////////////////////////////////
+// Main Nav
+/////////////////////////////////
+.drop-down-menu
+  // display none
+  opacity 0
+  transition 0.3s
+  transform translateX(0%) translateY(-100%)
+
+  a:hover
+    color #03a9f4 !important
+
+
+.products:hover
+  .drop-down-menu
+    opacity .9
+    display block
+    transform translateX(0%) translateY(0%)
+    transition 0.3s
+
+
+
+.shadow-t
+  background linear-gradient(to bottom,   rgba(230,230,230,.8) 0%,rgba(200,200,200,.15) 100%)
+
+.shadow-l
+  background linear-gradient(to right,   rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%)
+
+
+/////////////////////////////////
+// Thumbs
+///////////////////////////////
+.featured-pages
+  figure
+    transition 0.3s
+  figure:hover
+    background-color #03a9f4 !important
+  figure:hover .title
+    color #000 !important
+
+/////////////////////////////////
+// Slick Slider
+///////////////////////////////
+.home-slideshow
+  .copywrite
+    transition 0.5s
+    transform translateX(0%) translateY(0%)
+
+  .copywrite:hover .flag
+    transition 0.3s
+    transform translateX(-100%) translateY(0%)
+
+
+  .slick-prev
+    left 1rem
+
+  .slick-next
+    right 1rem
+
+.slick-carousel
+  figure
+    background transparent !important
+  section figure:last-child
+    margin-right 0 !important
+
+/////////////////////////////////
+// Styles
+///////////////////////////////
+.br25
+  border-radius .25rem !important
+
+figure
+  position relative
+  border-radius .25rem
+
+figcaption
+  background-color #222
+
+
+button:hover
+  // background-image: linear-gradient(to top, #fff, #aaa);
+  //background-image linear-gradient(to top, $accent, #575757) !important;
+
+header
+  background $header-bg
+
+  .logo
+    background-size contain
+    background-repeat no-repeat
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////
+// DEV COLOR CLASSES
+////////////////////////////////////////////////////
+.hide
+  display none !important
+.bg0
+  background transparent !important
+.bg10
+  background-color darken(#fff, 10%) !important
+.bg20
+  background-color darken(#fff, 20%) !important
+.bg30
+  background-color darken(#fff, 30%) !important
+.bg40
+  background-color darken(#fff, 40%) !important
+.bg50
+  background-color darken(#fff, 50%) !important
+.bg60
+  background-color darken(#fff, 60%) !important
+.bg70
+  background-color darken(#fff, 70%) !important
+.bg80
+  background-color darken(#fff, 80%) !important
+.bg90
+  background-color darken(#fff, 90%) !important
+.bg100
+  background-color darken(#fff, 100%) !important
+
+
+/////////////////////////////////
+// Guids
+///////////////////////////////
+section
+  border none !important
+
+
+.vertical-guides
+  overflow visible
+
+.vertical-guides figure figure
+  &:before,
+  &:after
+    //- z-index 1
+    background rgba(255,255,255, 0.08)
+
+.horizontal-guides
+  section
+    position relative
+    background transparent !important
+  section:after
+    margin 0 !important
+    position absolute !important
+    // z-index 99
+    background rgba(255,255,255, 0.0015)
+
+  // section:first-child:after
+  //   display none
+  section:before
+    background rgba(255,255,255, 0.0015)
+    position absolute !important
+    bottom 0
+    // z-index 99
+
+
+
+
+
+guide_opacity = .1
+guide_color = #fff
+.horizontal-guides
+  section
+    border-top alpha(guide_color, .1) solid 1px
+    &:nth-child(2n+2)
+      background alpha(#fff, .03)
+    &:before
+      border-top alpha(guide_color, guide_opacity) solid 1px
+    &:after
+      border-bottom alpha(guide_color, guide_opacity) solid 1px
+
+.vertical-guides
+  height: 100vh
+  overflow-x hidden
+  overflow-y auto
+  position: fixed
+  width 100%
+  top: 0
+  right: 0
+  bottom: 0
+  // margin-top -2px
+  figure
+    // padding-top 1px
+    margin-bottom 0
+    figure
+      &:before,
+      &:after
+        content ""
+        position absolute
+        width 1px
+        height 100%
+        background alpha(guide_color, guide_opacity)
+      &:before
+        left 0
+      &:after
+        right 0
+
+.h-guide
+  position relative
+  float left
+  &:nth-child(2n+2)
+    background alpha(#fff, .05)
+
+  // &:after
+  //   content ""
+  //   position absolute
+  //   width 100%
+  //   height 1px
+  //   left 0
+  //   top -2px
+  //   background alpha(#fff, .1)

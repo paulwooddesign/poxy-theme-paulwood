@@ -1,0 +1,29 @@
+:php
+  /**
+   * Chimera template for displaying Visionaries
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+  get_template_part( 'part-header');
+
+  $args = array(
+    'orderby' => 'name',
+    'posts_per_page' => 99,
+    'post_type' => array('vip')
+  );
+
+  $sections = new WP_Query( $args );
+
+
+
+section
+  .sw
+    .cw.op0.waterfall
+      :php
+        while ($sections->have_posts()) : $sections->the_post();
+          get_template_part('thumb-visionary');
+        endwhile;
+        wp_reset_query();

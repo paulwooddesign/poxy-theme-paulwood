@@ -1,0 +1,123 @@
+:php
+  //- $image_url = get_poxy_thumb();
+  $image_url = get_poxy_thumb_650();
+  if ($image_url) {
+    $image = 'background-image: url('. $image_url. ')';
+  } else {
+    $image_ph = get_bloginfo('template_url') . '/images/logo-blue.svg';
+    $image = 'background-image: url('.$image_ph.')';
+  }
+
+- $contact_name = poxy_meta('dealer_contact_name');
+- $contact_title = poxy_meta('dealer_contact_title');
+- $street1 = poxy_meta('dealer_street1');
+- $street2 = poxy_meta('dealer_street2');
+- $city = poxy_meta('dealer_city');
+- $state = poxy_meta('dealer_state');
+- $zip = poxy_meta('dealer_zip');
+- $country = poxy_meta('dealer_country');
+- $website = poxy_meta('dealer_website');
+- $phone = poxy_meta('dealer_phone');
+- $fax = poxy_meta('dealer_fax');
+- $rental = poxy_meta('dealer_rental');
+- $latitude = poxy_meta('dealer_latitude');
+- $longitude = poxy_meta('dealer_longitude');
+
+
+//- - get_template_part( 'part-header' );
+//- - get_template_part( 'part-breadcrumbs' );
+
+
+section.bg-black.white.clear.ofh
+  .sw
+    .cw.rela_12.b_12.c_58.d_58.e_p11
+      .paxy.fill.shadow-l.z2.hd.he
+      .rel.mb0.qoxya18a_12.qoxyb14b_12.qoxyc14c_58.poxyd11d_12.poxye11e_12
+        map.rel.image.qaxya34a_p100.qaxyb11b_p100.qaxyc11c_p100._oxyd54d_p100._oxye54e_p100.bgp-rc(center!='<?php echo $latitude; ?>, <?php echo $longitude; ?>', zoom='15', styles="[{stylers:[{hue:'#03a9f4'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'on'}]},{featureType:'water',stylers:[{color:'#03a9f4'}]}]")
+          marker(position!='[<?php echo $latitude; ?>, <?php echo $longitude; ?>]', title='Hello Marker', draggable='false', visible='true', icon!='<?php bloginfo("url"); ?>/images/dealers/map-marker.svg.png')
+          //- info-window#bar(position!='<?php echo $latitude; ?>, <?php echo $longitude; ?>', visible='true')
+          //-   div(ng-non-bindable='')
+          //-       #siteNotice
+          //-         - the_title();
+        .paxy.fill.shadow-r.z2.hd.he
+      .rel.poxa18a_12.mb0.poxb14b_12.poxc14c_58.poxd14d_58.poxe11e_34
+        .wrap
+          .rel.paxya12a_12.paxyb12b_12.paxyc12c_58.poxd12d_58.poxe11e_12
+            .rel._oxap11a_p11.z6._oxbp11b_p11._oxcp11c_p11.poxdp11d_p11.poxep11e_p11
+              .rel.poxya12a_pox.poxyb12b_pox.poxyc12c_pox.poxyd11d_pox.poxye11e_pox
+                h2.txa-11.txb-9.txc-8.txd-8.mt1-d.txe-7.mt1-e(title='')
+                  - the_title();
+
+                .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye11e_pox
+                  p Description
+
+
+              - if($website) :
+                  .rel.poxap11a_14.poxbp11b_14.poxcp11c_14.poxdp11d_14.poxep11e_14
+                    a.poxy.mt1(href!="<?php echo $website; ?>", rel="bookmark", target="_blank")
+                      button.p2 Visit Website
+              - endif;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section
+  .sw
+    .cw
+
+
+
+
+
+- get_template_part( 'part-content' );
+
+
+section
+  .sw
+      .cw
+        .poxa12.poxb12.poxc11.poxd11.poxe11
+          h2 Address
+          p
+            span.bold.tx-u.mr2 Street:
+            - echo $street1;
+          p
+            span.bold.tx-u.mr2 Zip / Postcode:
+            - echo $zip;
+          p
+            span.bold.tx-u.mr2 City:
+            - echo $city;
+          p
+            span.bold.tx-u.mr2 State:
+            - echo $state;
+          p
+            span.bold.tx-u.mr2 Country:
+            - echo $country;
+
+        .poxa12.poxb12.poxc11.poxd11.poxe11
+          h2 Contact
+          p
+            span.bold.tx-u.mr2 Telephone:
+            - echo $phone;
+          p
+            span.bold.tx-u.mr2 Fax:
+            - echo $fax;
+          p
+            span.bold.tx-u.mr2 E-mail:
+
+          a(href!='http://<?php echo $website; ?>', target='_blank')
+            p
+              span.bold.tx-u.mr2 Website:
+              - echo $website;

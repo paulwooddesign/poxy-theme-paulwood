@@ -1,0 +1,14 @@
+.DS_store
+secret.json
+node_modules
+dist
+app/images
+app/videos
+_REF
+.png
+.jpg
+.psd
+.tmp
+.zip
+.sass-cache
+app/bower_components

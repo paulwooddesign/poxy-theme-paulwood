@@ -1,0 +1,38 @@
+include mixins/sections.jade
+include mixins/header.jade
+
+
++header_right_3('taxonomy-product/tax-banner.jpg', 'Video PRO', 'Film & Video', 'Read More', '#', 'Jarmo Phojaniemi')
+  p Video Pro Lightbanks are the industry standard in light modifiers. Versatile and lightweight, they are perfect when you need controlled soft lighting on small sets. Useful as a separation light or small fill. These Lightbanks are primarily used with single broad-beamed, open-faced instruments.
+
+
+//-
+//- +header_tax_left_2('Video PRO', 'Film & Video', 'Read More', '#', 'Jarmo Phojaniemi')(style='background-image: url(images/taxonomy-product/tax-banner.jpg);')
+//-   p Video Pro Lightbanks are the industry standard in light modifiers. Versatile and lightweight, they are perfect when you need controlled soft lighting on small sets. Useful as a separation light or small fill. These Lightbanks are primarily used with single broad-beamed, open-faced instruments.
+
+//- +section_tax_product('Standard', 'The standard-depth banks are extremely lightweight and are primarily used with single broad-beamed, open-faced instruments.', '#/taxonomy-product-child')(style='background-image: url(images/taxonomy-product/tax-1.png);')
+//- +section_tax_product('Strip', 'The strip bank will provide thinner, more attractive highlights, revealing more of the subject. Common applications include but are by no means limited to side lighting or top lighting a person or an object without getting as much wrap around as a conventional rectangular softbox.', '#/taxonomy-product-child')(style='background-image: url(images/taxonomy-product/tax-2.png);')
+//- +section_tax_product('Shallow', 'The Shallow Video Pro is ideal for work in cramped interiors where medium softening of a broad light is desired. This Lightbank is only for lights with a very wide throw.', '#/taxonomy-product-child')(style='background-image: url(images/taxonomy-product/tax-3.png);')
+
+
+
++section_1('taxonomy-product/tax-1.png cb contain', 'Standard')
+  p.
+    The standard-depth banks are extremely lightweight and are primarily used with single broad-beamed, open-faced instruments.
+
+  a(href='#/taxonomy-product-child')
+    button.mt1.zeta.pt4.pb4.pr2.pl2 Learn More
+
++section_1('taxonomy-product/tax-2.png cb contain', 'Strip')
+  p.
+    The strip bank will provide thinner, more attractive highlights, revealing more of the subject. Common applications include but are by no means limited to side lighting or top lighting a person or an object without getting as much wrap around as a conventional rectangular softbox.
+
+  a(href='#/taxonomy-product-child')
+    button.mt1.zeta.pt4.pb4.pr2.pl2 Learn More
+
++section_1('taxonomy-product/tax-3.png cb contain', 'Shallow')
+  p.
+    The Shallow Video Pro is ideal for work in cramped interiors where medium softening of a broad light is desired. This Lightbank is only for lights with a very wide throw.
+
+  a(href='#/taxonomy-product-child')
+    button.mt1.zeta.pt4.pb4.pr2.pl2 Learn More

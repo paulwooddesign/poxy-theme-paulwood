@@ -1,0 +1,43 @@
+:php
+  /**
+   * Chimera template for displaying the blog page
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+
+- get_template_part( 'part-header' );
+
+
+section
+  .sw
+    .cw
+      .accordion.a12b12
+        :php
+          function get_me_faq_sections($atts) {
+            global $post;
+            $args = array( 'post_type' => 'faq',  'posts_per_page' => 99, 'faq_section' => $atts );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+
+        h2.txa-4.txb-4.txc-4.mt1
+          - the_title();
+        - the_content();
+
+        - endwhile;
+        - wp_reset_query();
+        - }
+
+        - $taxonomy = 'faq_section';
+        - $queried_term = get_query_var($taxonomy);
+        - $skills = get_the_terms($post->ID, $taxonomy);
+        - $skills = get_terms($taxonomy, 'slug='.$queried_term.'&order=ASC&orderby=name'  );
+
+        - foreach ($skills as $skill) :
+          h1.txa-8.txb-8.txc-8.mt1
+            - echo $skill->name;
+          div
+            - get_me_faq_sections($skill->slug);
+          - endforeach;

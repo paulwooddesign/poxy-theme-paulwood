@@ -1,0 +1,38 @@
+
+- get_template_part( 'part-slideshow-home');
+- get_template_part( 'part-featured-pages');
+//- - get_template_part( 'part-speedring-finder');
+
+//- - get_template_part( 'admin/ajax/part-speed-ring-finder');
+- get_template_part( 'part-speedring-finder');
+
+
+//- section
+//- 	.sw
+//- 		.cw
+//- 			h2 Featured Products
+
+:php
+	$args = array(
+		'posts_per_page' => 2,
+		'post_status' => 'future',
+		'order' => 'ASC',
+		'post_type' => array('event')
+	);
+
+	$sections = new WP_Query( $args );
+
+//- section
+//- 	.sw
+//- 		.cw
+//- 			h2 Upcoming Events
+
+section
+	.sw
+		.cw
+			h2 Upcoming Events
+			:php
+				while ($sections->have_posts()) : $sections->the_post();
+					get_template_part('thumb-event');
+				endwhile;
+				wp_reset_query();

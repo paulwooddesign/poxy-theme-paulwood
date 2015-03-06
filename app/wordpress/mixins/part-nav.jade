@@ -1,0 +1,117 @@
+:php
+  /**
+   * Chimera template for displaying Main Navigation
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+section.header.paxy.z9.clear.mt0.bg0.tx-c
+  .sw.rel
+    .cw.static
+      #logo.rel.poxya114a_118.poxyb110b_116.poxyc110c_112.poxyd18d_110.poxye16e_18.mb0
+        a.baxy.american-flag.bg-contain.z9(href='/about')
+        a(href!='<?php bloginfo("url"); ?>')
+          .rel.paxyap11a_114.p4.bg-accent.z10.paxybp11b_110.paxycp11c_110.paxydp11d_18.paxyep11e_16
+            .logo.fill.bg-contain
+      nav.qoxy.hd.he.mb0.ml0
+        .rel.poxya18a_116.mb0.products.static.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye12e_16
+          .rel.poxya18a_116.mb0.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye12e_16.tx-v
+            a(href='/products')
+              span.z10
+                | Products
+          #product-menu.ofh.drop-down-menu.paxyap11paxybp11paxycp11paxydp11paxyep11.pr2.tx-l
+            .poxyap11a_116poxybp11b_112poxycp11c_112
+            .cw
+              .poxya14a_12poxyb14b_12poxyc14c_34.rel.mb0
+                .qaxya11a_12qaxyb11b_12qaxyc11c_34.bg-gray
+                  .qoxya14a_12qoxyb14b_12qoxyc14c_34.rel
+                    .qoxya14a_14qoxyb14b_14qoxyc14c_14.bg-contain.bgpcb(style!='background-image: url(<?php bloginfo("url"); ?>/images/dropdown/dd-{{msg}}.png);')
+                    .qoxya14a_14qoxyb14b_14qoxyc14c_14.mt1
+                      .gamma {{msg}}
+                      p.txt-0.mr1 {{description}}
+              .poxya34a_12poxyb34b_12poxyc34c_34.rel.mb0.ml0
+                .paxya11a_12paxyb11b_12paxyc11c_34.bg10.pl1
+                  .poxya14a_12poxyb14b_12poxyc14c_34.mb0
+
+                    h3.mt1.txa-5.txb-4.txc-3.txd-4.txe-1
+                      a(href!='<?php bloginfo("url"); ?>/products/lightbanks/') Lightbanks
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/lightbanks/film-video/') Film &amp; Video
+                    .zeta.mt4(ng-repeat='film_and_video_product in film_and_video_products')
+                      a(href!='<?php bloginfo("url"); ?>{{film_and_video_product.url}}', ng-click='clickThing(film_and_video_product)', ng-mouseover='mouseOverProduct(film_and_video_product)') {{film_and_video_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/lightbanks/strobe') Strobe
+                    .zeta.mt4(ng-repeat='strobe_product in strobe_products')
+                      a(href!='<?php bloginfo("url"); ?>{{strobe_product.url}}', ng-click='clickThing(strobe_product)', ng-mouseover='mouseOverProduct(strobe_product)') {{strobe_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/lightbanks/overhead') Overhead
+                    .zeta.mt4(ng-repeat='overhead_product in overhead_products')
+                      a(href!='<?php bloginfo("url"); ?>{{overhead_product.url}}', ng-click='clickThing(overhead_product)', ng-mouseover='mouseOverProduct(overhead_product)') {{overhead_product.name}}
+                  .poxya14a_12poxyb14b_12poxyc14c_34.mb0
+                    h3.mt1.txa-5.txb-4.txc-3.txd-4.txe-1 Other
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/speed-rings/') Speed Rings
+                    .zeta.mt4(ng-repeat='speed_ring_product in speed_ring_products')
+                      a(href!='<?php bloginfo("url"); ?>{{speed_ring_product.url}}', ng-click='clickThing(speed_ring_product)', ng-mouseover='mouseOverProduct(speed_ring_product)') {{speed_ring_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/lighting-kits/') Kits
+
+                    .zeta.mt4(ng-repeat='kit_product in kit_products')
+                      a(href!='<?php bloginfo("url"); ?>{{kit_product.url}}', ng-click='clickThing(kit_product)', ng-mouseover='mouseOverProduct(kit_product)') {{kit_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/chimera-lights/') Lights
+                    .zeta.mt4(ng-repeat='light_product in light_products')
+                      a(href!='<?php bloginfo("url"); ?>{{light_product.url}}', ng-click='clickThing(light_product)', ng-mouseover='mouseOverProduct(light_product)') {{light_product.name}}
+                  .poxya14a_12poxyb14b_12poxyc14c_34.mb0
+                    h3.mt1.txa-5.txb-4.txc-3.txd-4.txe-1
+                      a(href!='<?php bloginfo("url"); ?>/products/accessories/') Accessories
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/accessories/light-modifiers/') Light Modifiers
+                    .zeta.mt4(ng-repeat='light_modifier_product in light_modifier_products')
+                      a(href!='<?php bloginfo("url"); ?>{{light_modifier_product.url}}', ng-click='clickThing(light_modifier_product)', ng-mouseover='mouseOverProduct(light_modifier_product)') {{light_modifier_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/accessories/grip/') Grip
+                    .zeta.mt4(ng-repeat='grip_product in grip_products')
+                      a(href!='<?php bloginfo("url"); ?>{{grip_product.url}}', ng-click='clickThing(grip_product)', ng-mouseover='mouseOverProduct(grip_product)') {{grip_product.name}}
+                    h4.color-accent.mt2
+                      a(href!='<?php bloginfo("url"); ?>/products/accessories/replacement-parts/') Parts
+                    .zeta.mt4(ng-repeat='part_product in part_products')
+                      a(href!='<?php bloginfo("url"); ?>{{part_product.url}}', ng-click='clickThing(part_product)', ng-mouseover='mouseOverProduct(part_product)') {{part_product.name}}
+
+        .rel.poxya18a_116.mb0.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye16e_16.tx-v
+          a(href!='<?php bloginfo("url"); ?>/about')
+            span
+              | About
+        .rel.poxya18a_116.mb0.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye16e_16.tx-v
+          a(href!='<?php bloginfo("url"); ?>/events')
+            span
+              | Events
+        .rel.poxya18a_116.mb0.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye16e_16.tx-v
+          a(href!='<?php bloginfo("url"); ?>/visionaries')
+            span
+              | Visionaries
+        .rel.poxya18a_116.mb0.poxyb18b_112.poxyc16c_110.poxyd16d_18.poxye16e_16.tx-v
+          a(href!='<?php bloginfo("url"); ?>/dealers')
+            span
+              | Dealers
+        .rel.poxya18a_116.mb0.he.poxyb18b_112.poxyc18c_110.poxyd16d_18.poxye16e_16.tx-v
+          a(href!='<?php bloginfo("url"); ?>/blog')
+            span
+              | Blog
+
+        //- - get_template_part( 'part-google-search');
+
+      nav.qoxy.ha.hb.hc
+        .rel.poxya116a_116.mb0.qoxyb112b_112.qoxyc110c_110.qoxyd18d_18.qoxye16e_16
+          a(ng-click='showModal=!showModal')
+            .rel._oxya124a_124.mb0.z5._oxyb124b_124._oxyc118c_118._oxyd112d_112._oxye18e_18
+              svg-icon(p='list')
+
+
+
+section.clear
+  .sw
+    .cw
+      .rel.poya116a_116.m0.poyb116b_112.poyc116c_110.poyd116d_18.poye116e_16

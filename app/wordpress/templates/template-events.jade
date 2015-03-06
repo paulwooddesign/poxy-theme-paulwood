@@ -1,0 +1,50 @@
+:php
+  get_template_part( 'part-header' );
+
+  $args = array(
+    'posts_per_page' => 4,
+    'post_status' => 'future',
+    'order' => 'ASC',
+    'post_type' => array('event')
+  );
+
+  $sections = new WP_Query( $args );
+
+section
+  .sw
+    .cw
+      h2 Upcoming Events
+
+section
+  .sw
+    .cw
+      :php
+        while ($sections->have_posts()) : $sections->the_post();
+          get_template_part('thumb-event');
+        endwhile;
+        wp_reset_query();
+
+
+
+
+:php
+  $args = array(
+    'post_type' => array('event')
+  );
+
+  $sections = new WP_Query( $args );
+section
+  .sw
+    .cw
+      h2 Past Events
+
+section
+  .sw
+    .cw
+      :php
+        while ($sections->have_posts()) : $sections->the_post();
+          get_template_part('thumb-event');
+        endwhile;
+        //- wp_reset_query();
+
+- get_template_part( 'part-pagination');

@@ -1,0 +1,43 @@
+:php
+  get_template_part( 'part-header' );
+
+
+  $taxonomy = 'product_cat';
+  $queried_term = get_query_var($taxonomy);
+
+  $args = array(
+    'orderby'       =>  'term_order',
+    'hide_empty'    => false,
+    'parent'        => 0
+  );
+
+  $cats = get_terms($taxonomy, $args);
+
+- foreach ($cats as $cat) :
+
+  - $link = get_term_link( $cat->slug, 'product_cat' );
+  - $title = $cat->name;
+  - $description = $cat->description;
+  - $slug = $cat->slug;
+  - $term_id = $cat->slug;
+  - $image = poxy_tax_image($term_id);
+  - $image = 'background-image: url('. $image. ')';
+
+  section
+    .sw
+      .cw
+        figure.rel.image.poxya34a_38.poxyb34b_12.poxyc12c_12.poxyd11d_12.poxye11e_12.bgp-cc.bgs-cover(style!='<?php echo $image; ?>')
+          a(href!="<?php echo $link; ?>", rel="bookmark").paxy.fill
+        .rel.poxya14a_14.poxyb14b_14.poxyc12c_12.11dpoxd_11.11epoxe_11
+
+          a(href!="<?php echo $slug; ?>", rel="bookmark")
+            h3.txa-6.txb-4.txc-4.txd-5.txe-3
+              - echo $title;
+          .poxyap11.poxybp11.poxycp11.poxydp11.poxyep11
+            .poxya112.poxyb112.poxyc18.poxyd16.poxye14.line.mt1.mb1.bg-black
+          p
+            - echo $description;
+          a.poxy.mt1(href!="<?php echo $slug; ?>", rel="bookmark")
+            button.p2 Read More
+
+- endforeach;

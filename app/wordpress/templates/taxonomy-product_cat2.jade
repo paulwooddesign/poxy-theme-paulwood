@@ -1,0 +1,153 @@
+:php
+  /**
+   * Chimera template for displaying the blog page
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+
+
+  //- get_template_part( 'part-header' );
+
+  //- $args = array('post_type' => array('post'));
+  //- $sections = new WP_Query( $args );
+  //- while ($sections->have_posts()) : $sections->the_post();
+  //-   get_template_part('part-section');
+  //- endwhile;
+  //- wp_reset_query();
+
+- $thumbnail_id = $wp_query->queried_object->term_id;
+- $thumbnail_id = get_woocommerce_term_meta( $thumbnail_id, 'thumbnail_id', true );
+- $image = wp_get_attachment_image_src($thumbnail_id, 'full', false);
+- $image = $image[0];
+- $image = 'background-image: url('. $image. ')';
+
+- $title = $wp_query->queried_object->name;
+- $sub_title = $wp_query->queried_object->name;
+- $copywrite = $wp_query->queried_object->term_id;
+- $description = $wp_query->queried_object->description;
+
+
+//- Get Banner Image
+//- - $featured_image = get_tax_meta($id,'poxy_cat_featured_image', true);
+//- - $banner_image = get_tax_meta($id,'poxy_cat_banner_image', true);
+- $term_id = $wp_query->queried_object->term_id;
+:php
+  $args = array(
+    'orderby'       => 'name',
+    'hide_empty'    => true,
+    'fields'        => 'all',
+    'parent'         => $term_id,
+    'hierarchical'  => true,
+    'child_of'      => 0,
+    'pad_counts'    => false,
+    'cache_domain'  => 'core'
+  );
+- $taxonomy_name = $wp_query->tax_query->queries[0]['taxonomy'];
+- $termchildren = get_terms( $taxonomy_name, $args );
+- if ($termchildren) :
+
+  section.bg-black.white.clear
+    figcaption.copywrite.zeta.daxy.p4.z6
+      - echo $copywrite;
+    .sw
+      .cw.rela_12.b_12.c_12.d_12.e_34
+        .paxy.fill.shadow-l.z2
+        .rel.poxa18a_12.poxb14b_12.poxc14c_12.poxd14d_12.poxe14e_34
+          .wrap
+            .rel.paxya12a_12.paxyb12b_12.paxyc12c_12.paxyd12d_12.paxye12e_34
+              .oxy.ap11.bp11
+                .rel.poxya12a_pox.poxyb12b_pox.poxyc12c_pox.poxyd12d_pox.poxye12e_pox
+                  h2.txa-11.txb-9.txc-9.txd-8.txe-6(title='')
+                    - echo $title;
+                .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                  h3.txa-3.mt2-a.accent.light.txb-3.mt2-b.txc-3.mt2-c.txd-2.mt2-d.txe-1.mt2-e
+                    - echo $sub_title;
+                .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                  p
+                    - echo $description;
+        .rel.mb0.poxya18a_12.poxyb14b_12.poxyc14c_12.poxyd14d_12.poxye14e_34
+          figure.bg-contain.rel.image.paxya11a_p100.paxyb11b_p100.paxyc11c_p100.paxyd11d_p100.paxye11e_p100(style!='<?php echo $image; ?>')
+            .paxy.fill.shadow-r.z2
+
+
+
+  - get_template_part( 'part-breadcrumbs' );
+
+  - foreach ( $termchildren as $child ) :
+    - $thumbnail_id = get_woocommerce_term_meta( $child->term_id, 'thumbnail_id', true );
+    - $image = wp_get_attachment_image_src($thumbnail_id, 'full', false);
+    - $image = $image[0];
+    - $image = 'background-image: url('. $image. ')';
+
+    - $title = $child->name;
+
+    section.bg-black.white.clear
+      figcaption.copywrite.zeta.daxy.p4.z6
+        - echo $copywrite;
+      .sw
+        .cw.rela_12.b_12.c_12.d_12.e_34
+          .paxy.fill.shadow-l.z2
+          .rel.poxa18a_12.poxb14b_12.poxc14c_12.poxd14d_12.poxe14e_34
+            .wrap
+              .rel.paxya12a_12.paxyb12b_12.paxyc12c_12.paxyd12d_12.paxye12e_34
+                .oxy.ap11.bp11
+                  .rel.poxya12a_pox.poxyb12b_pox.poxyc12c_pox.poxyd12d_pox.poxye12e_pox
+                    h2.txa-11.txb-9.txc-9.txd-8.txe-6(title='')
+                      - echo $title;
+                  .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                    h3.txa-3.mt2-a.accent.light.txb-3.mt2-b.txc-3.mt2-c.txd-2.mt2-d.txe-1.mt2-e
+                      - echo $sub_title;
+                  .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                    p
+                      - poxy_text($child->description, 30);
+          .rel.mb0.poxya18a_12.poxyb14b_12.poxyc14c_12.poxyd14d_12.poxye14e_34
+            figure.bg-contain.rel.image.paxya11a_p100.paxyb11b_p100.paxyc11c_p100.paxyd11d_p100.paxye11e_p100(style!='<?php echo $image; ?>')
+              .paxy.fill.shadow-r.z2
+  - endforeach;
+- else :
+
+  section.bg-black.white.clear
+    figcaption.copywrite.zeta.daxy.p4.z6
+      - echo $copywrite;
+    .sw
+      .cw.rela_12.b_12.c_12.d_12.e_34
+        .paxy.fill.shadow-l.z2
+        .rel.poxa18a_12.poxb14b_12.poxc14c_12.poxd14d_12.poxe14e_34
+          .wrap
+            .rel.paxya12a_12.paxyb12b_12.paxyc12c_12.paxyd12d_12.paxye12e_34
+              .oxy.ap11.bp11
+                .rel.poxya12a_pox.poxyb12b_pox.poxyc12c_pox.poxyd12d_pox.poxye12e_pox
+                  h2.txa-11.txb-9.txc-9.txd-8.txe-6(title='')
+                    - echo $title;
+                .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                  h3.txa-3.mt2-a.accent.light.txb-3.mt2-b.txc-3.mt2-c.txd-2.mt2-d.txe-1.mt2-e
+                    - echo $sub_title;
+                .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye38e_pox
+                  p
+                    - echo $description;
+        .rel.mb0.poxya18a_12.poxyb14b_12.poxyc14c_12.poxyd14d_12.poxye14e_34
+          figure.bg-contain.rel.image.paxya11a_p100.paxyb11b_p100.paxyc11c_p100.paxyd11d_p100.paxye11e_p100(style!='<?php echo $image; ?>')
+            .paxy.fill.shadow-r.z2
+
+
+  - get_template_part( 'part-breadcrumbs' );
+
+  - if (have_posts()):
+  - while (have_posts()):
+    - the_post();
+    //- - $terms = get_the_terms($post->id, 'TAXONOMY_NAME');
+    //- - $title = $terms[0]->name;
+    //- - $sub_title = 'Sub title';
+    //- - $copywrite = 'copywrite';
+    //- - echo $title;
+    //- - $pt = get_post_type( get_the_ID() );
+    //- - echo get_post_type( get_the_ID() );
+    - get_template_part('part-section');
+
+  - endwhile;
+  - endif;
+
+- endif;

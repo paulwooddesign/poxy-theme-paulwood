@@ -1,0 +1,65 @@
+include mixins/thumbs.jade
+include mixins/slideshow-slide.jade
+include mixins/mixin-lorem-ipsum.jade
+include mixins/placeholder-image.jade
+include mixins/header.jade
+
+
+
+
++header_right_3('blog/banner-1.jpg lc', 'Blog', 'YOUR SOURCE FOR INSIGHT ON LIGHT', 'Read More', '#', 'Jarmo Phojaniemi')
+
+
+//-
+//- +header_tax_left_2('About', 'CHIMERA WAS BORN FROM A PARTNERSHIP BETWEEN A PIONEERING MOUNTAINEER-ENGINEER AND A PHOTOGRAPHER SEARCHING FOR PERFECT LIGHT', 'Read More', '#', 'Jarmo Phojaniemi')(style='background-image: url(images/blog/banner-1.jpg);')
+//-   p Video Pro Lightbanks are the industry standard in light modifiers. Versatile and lightweight, they are perfect when you need controlled soft lighting on small sets. Useful as a separation light or small fill. These Lightbanks are primarily used with single broad-beamed, open-faced instruments.
+
+
+
+//- +header_left('Blog', 'YOUR SOURCE FOR INSIGHT ON LIGHT', 'Read More', '#', 'Jarmo Phojaniemi')(style='background-image: url(images/blog/banner-1.jpg);')
+
+
++section()
+  +pox(34, 34, 11, 11, 11)
+    .wrap
+      +thumb_blog('#/single', 'blog/post-2.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-1.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-3.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-4.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-5.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-6.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+      +thumb_blog('#/single', 'blog/post-7.jpg', 'A Unique Perspective on the Golden Globes', 'ADVENTURES IN LIGHT')
+
+  +pox(14, 14, 11, 11, 11)
+    .wrap
+      +pox('p11', 'p11', '12', '12', '11')
+        +h3('4', '4', '4', '4', '1') Recent Posts
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+
+
+      +poxy('p11', 'p11', '12', '12', '11')
+        +h3('4 mb2', '4', '4', '4', '1') Twitter Feed
+        a.mt2.twitter-timeline(href='https://twitter.com/ChimeraLighting', data-widget-id='466400885237501952') Tweets by @ChimeraLighting
+        script.
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+
+
+
+
+- var n = 1
+- var i = 9
+section
+  div.sw
+    div.cw
+      figure.a14a_116
+      while n < i
+        figure.a116a_116b14b_14c14c_14d14d_14e12e_12
+          span.paxyap11ap_11
+          .oxy= n++
+      figure.a14a_116

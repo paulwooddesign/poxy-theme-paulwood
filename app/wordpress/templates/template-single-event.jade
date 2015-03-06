@@ -1,0 +1,122 @@
+- $city = poxy_meta('_poxy_event_city');
+- $start_date = poxy_meta('_poxy_event_start_date');
+- $end_date = poxy_meta('_poxy_event_end_date');
+- $booth = poxy_meta('_poxy_event_booth');
+- $link = poxy_meta('_poxy_event_link');
+
+- get_template_part( 'part-header' );
+
+
+//- section
+//-   .sw
+//-       .cw
+//-         .poxa12.poxb12.poxc11.poxd11.poxe11
+//-           h2 Details
+//-
+//-           - if ($city) :
+//-                   p.txa-1.txb-1.txc-1.txd-1.txe-1
+//-                     strong.mr2 Location:
+//-                     - echo $city;
+//-             - endif;
+//-
+//-             - if ($start_date) :
+//-                   p.mt4.txa-1.txb-1.txc-1.txd-1.txe-1
+//-                     strong.mr2 Starts:
+//-                     - echo $start_date;
+//-             - endif;
+//-
+//-             - if ($end_date) :
+//-                   p.mt4.txa-1.txb-1.txc-1.txd-1.txe-1
+//-                     strong.mr2 Ends:
+//-                     - echo $end_date;
+//-             - endif;
+//-
+//-         - if ($booth) :
+//-           .poxa12.poxb12.poxc11.poxd11.poxe11
+//-             h2.mr2 Booth#
+//-               span
+//-                 - echo $booth;
+//-         - endif;
+
+
+- if (have_posts()):
+- while (have_posts()):
+  - the_post();
+  section.article2
+    .sw
+        .cw
+          .poxa12.poxb12.poxc12.poxd11.poxe11
+            h2.txa-6.txb-6.txc-6.txd-6.txe-6 Overview
+
+            - the_content();
+
+
+          .rel.qoxya14a_14.qoxyb14b_14.qoxc14c_14.poxd11d_14.poxe11e_14
+            .wrap
+              .poxap11.poxbp11.poxc12.poxd12.poxe11
+                h2.txa-6.txb-6.txc-6.txd-6.txe-6 Details
+
+                - if ($city) :
+                        p.txa-1.txb-1.txc-1.txd-1.txe-1
+                          strong.mr2 Location:
+                          - echo $city;
+                  - endif;
+
+                  - if ($start_date) :
+                        p.mt4.txa-1.txb-1.txc-1.txd-1.txe-1
+                          strong.mr2 Starts:
+                          - echo $start_date;
+                  - endif;
+
+                  - if ($end_date) :
+                        p.mt4.txa-1.txb-1.txc-1.txd-1.txe-1
+                          strong.mr2 Ends:
+                          - echo $end_date;
+                  - endif;
+
+                  - if ($booth) :
+                        p.mt4.txa-1.txb-1.txc-1.txd-1.txe-1
+                          strong.mr2 Booth:
+                          - echo $booth;
+                  - endif;
+
+                  - if($link) :
+                      .rel.poxap11a_14.poxbp11b_14.poxcp11c_14.poxdp11d_14.poxep11e_14
+                        a.poxy.mt1(href!="<?php echo $link; ?>", target="_blank")
+                          button.p2 Event Website
+                  - endif;
+
+          .poxya11.poxyb11.poxyc11.poxyd11.poxye11
+            .wrap
+              .poxa12.poxb12.poxc12.poxd11.poxe11
+                script(type='text/javascript').
+                  var disqus_shortname = 'chimeralighting';
+                  (function () {
+                    var s = document.createElement('script'); s.async = true;
+                    s.type = 'text/javascript';
+                    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                    }());
+
+                #disqus_thread
+                script(type='text/javascript').
+                    var disqus_shortname = 'chimeralighting';
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+
+                noscript
+                  | Please enable JavaScript to view the
+                  a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+
+                a.dsq-brlink(href='http://disqus.com')
+                  | comments powered by
+                  span.logo-disqus Disqus
+
+
+- endwhile;
+- endif;

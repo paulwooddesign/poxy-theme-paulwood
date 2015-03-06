@@ -1,0 +1,488 @@
+///////////////////////////////////////////////
+// Import POXY
+///////////////////////////////////////////////
+poxy_dev = true
+@import '../bower_components/poxy/stylus/poxy'
+
+
+///////////////////////////////////////////////
+// Variables
+///////////////////////////////////////////////
+accent = #03a9f4
+footer_background_color = #efefef
+
+///////////////////////////////////////////////
+// Color Classes
+///////////////////////////////////////////////
+.tx-white
+  color #fff !important
+
+.white
+  color white !important
+
+.accent
+  color accent
+  line-height 1.5
+
+.tx-shadow
+  text-shadow 0 1px 0  black
+
+.bg-black
+  background #000 !important
+
+.bg-white
+  background #fff !important
+
+.bg-gray
+  background #ccc !important
+
+.color-accent,
+.color-accent a
+  color accent !important
+
+.bg-accent
+  background-color accent !important
+
+.tx-light
+  color #ccc !important
+  a
+    color #ccc !important
+
+// Filters
+.gray-scale
+  filter: grayscale(100%)
+
+// Gradients
+.shadow-l
+  background linear-gradient(100deg,   rgba(0,0,0,1) 40%,rgba(0,0,0,0) 40%,rgba(0,0,0,0) 100%)
+  // background linear-gradient(100deg,   rgba(0,0,0,1) 35%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 100%)
+  // background linear-gradient(105deg,   rgba(255,255,255,1) 40%,rgba(255,255,255,0) 40%,rgba(255,255,255,0) 100%)
+  // background linear-gradient(90deg,   rgba(240,240,240,1) 50%,rgba(240,240,240,0) 50%,rgba(240,240,240,0) 100%)
+.shadow-r
+  background linear-gradient(80deg,   rgba(0,0,0,0) 80%,rgba(0,0,0,0) 90%,rgba(0,0,0,1) 90%)
+  background linear-gradient(100deg,   rgba(0,0,0,0) 80%,rgba(0,0,0,0) 90%,rgba(0,0,0,1) 90%)
+
+.shadow-white-l
+  background linear-gradient(105deg,   rgba(255,255,255,1) 50%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%)
+
+
+// Line
+.line
+  background accent
+  height 1px
+
+///////////////////////////////////////////////
+// Main Settings
+///////////////////////////////////////////////
+*
+  background-size cover
+
+::selection
+  background accent
+  color black
+
+html
+  background rgba(#fff, 1)
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+
+body
+  font-weight 500
+  overflow-x hidden
+  max-width 100%
+  color #000
+  font-family 'futura-pt', 'Futura PT Book', 'Helvetica Neue', Helvetica, 'pragmatica-web', Arial, sans-serif
+  background-color footer_background_color
+
+p
+  // font-size .8rem
+  // line-height 1.1rem
+  letter-spacing .01em
+
+
+.article
+  p
+    line-height 1.5rem
+    letter-spacing -.01em
+
+a
+  color rgba(black, 1)
+  &:hover
+    color rgba(black, .80)
+
+nav a:hover
+  color accent !important
+
+.screen
+  background-color rgba(#ee4c11, .5)
+
+.invert
+  color rgba(white, .87)
+
+.bold
+  font-weight 800 !important
+
+.light
+  font-weight 300 !important
+
+
+figure
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+
+
+// .alpha,
+// .beta,
+// .gamma,
+// .delta,
+// .epsilon,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  text-transform uppercase !important
+  font-weight 800 !important
+  line-height 1
+
+
+// Buttons
+button,
+.button
+  background-color accent
+  color #fff
+  // letter-spacing .2rem
+  font-size .6rem !important
+  text-transform uppercase
+  background-color rgba(accent, 1)
+  &:hover
+    color #000
+    background-color rgba(accent, .8)
+
+
+// Images
+p img,
+img
+  width 100%
+  height auto
+
+
+
+
+// Reset
+input
+  margin 0
+  padding 0
+  font-size 100%
+  border none
+
+
+input[type="submit"]
+  font-size .8rem !important
+
+
+
+
+
+/////////////////////////////////
+// Header
+/////////////////////////////////
+figure
+  transition background-size 0.5s
+  position relative
+  box-sizing border-box
+  // box-shadow inset 0 0 1px #000
+  box-shadow inset 0 0 1px #000
+  background-color rgba(black, .03)
+  // border-radius .25rem
+
+figure:hover
+  background-color rgba(black, .08)
+  // box-shadow inset 0 0 1px #03a9f4, 0 0 1px #03a9f4
+  // box-shadow inset 0 0 2px accent
+
+
+figcaption
+  background-color #222
+/////////////////////////////////
+// Header
+/////////////////////////////////
+.header
+  background #fff
+
+  nav
+    text-align center
+    // text-transform capitalize
+    text-transform uppercase
+    font-size .8rem !important
+    color black
+    background-color transparent !important
+    // font-smoothing antialiased
+    // text-shadow 1px 1px 1px rgba(0,0,0,0.004)
+
+    // letter-spacing .1rem
+
+  #logo *
+    box-sizing content-box
+
+
+  button:hover
+    background #ccc
+
+  .logo
+    background-image url(../images/logo.png)
+    background-image url(../images/logo.svg)
+
+  .american-flag
+    width 15px
+    height 20px
+    margin-left -17px
+    background-image url(../images/american-flag.jpg)
+    background-image url(../images/american-flag.svg)
+
+
+
+
+// Main Nav
+.drop-down-menu
+  // display none
+  opacity 0
+  transition opacity 0.3s
+  transform translateX(0%) translateY(-100%)
+  box-sizing content-box
+  // margin-top 1px
+  border-bottom 1px solid #efefef
+
+  a:hover
+    color #03a9f4 !important
+
+.products:hover
+  .drop-down-menu
+    opacity 1
+    display block
+    transform translateX(0%) translateY(0%)
+    transition opacity 0.3s
+    // background #efefef
+
+
+
+/////////////////////////////////
+// Footer
+/////////////////////////////////
+footer
+  background-color footer_background_color
+
+  .boulder-co
+    a
+      position relative
+      letter-spacing .5em
+
+    a:before
+      content ""
+      background-size contain
+      background-image url(../images/colorado-flag.jpg)
+      background-image url(../images/colorado-flag.svg)
+      position absolute
+      margin-top -1px
+      margin-left -30px
+      width 20px
+      height 10px
+
+
+
+/////////////////////////////////
+// Container
+/////////////////////////////////
+.container
+  background-color #fff
+
+
+
+
+/////////////////////////////////
+// Sections
+/////////////////////////////////
+guide_opacity = .1
+guide_color = #000
+
+section
+  border-top alpha(guide_color, .2) solid 1px !important
+  &:before,
+  &:after
+    display none
+  // &:nth-child(2n+2)
+  //   background alpha(#000, .02)
+  // &:before
+  //   border-top alpha(guide_color, guide_opacity) solid 1px
+  // &:after
+  //   border-bottom alpha(guide_color, guide_opacity) solid 1px
+
+
+
+
+/////////////////////////////////
+// Featured Pages
+///////////////////////////////
+.featured-pages
+  figure
+    // transition 0.3s
+  // figure:hover
+  //   background-color #03a9f4 !important
+  .image:hover
+    background-size 110% !important
+
+
+  h2
+    &:before,
+    &:after
+      content attr(title)
+      position absolute
+      overflow hidden
+      transition 300ms ease
+      color #fff
+      top 0
+      left 0
+      right 0
+      bottom 0
+      opacity 0
+      visibility hidden
+      transition-property opacity, visibility, transform
+
+    &:before
+      transform translateY(-100%)
+    &:after
+      transform translateY(100%)
+
+
+  figure:hover h2:before,
+  figure:hover h2:after
+      opacity 1
+      visibility visible
+      transform none
+
+/////////////////////////////////
+// Slick Slider
+///////////////////////////////
+.home-slideshow
+  .copywrite
+    transition 0.5s
+    transform translateX(0%) translateY(0%)
+
+  .copywrite:hover .flag
+    transition 0.3s
+    transform translateX(-100%) translateY(0%)
+
+
+  .slick-prev
+    left 1rem
+
+  .slick-next
+    right 1rem
+
+.slick-carousel
+  section figure:last-child
+    margin-right 0 !important
+
+.new-products
+  section
+    border none !important
+
+  .slick-prev:before,
+  .slick-next:before
+    color #000 !important
+
+
+/////////////////////////////////
+// Instagram Feed
+///////////////////////////////
+.instagram-feed
+  background #222 !important
+
+  figure:hover div
+    box-shadow inset 0 0 1px #03a9f4, 0 0 1px #03a9f4
+
+  .rainbow
+    opacity .6
+    .color
+      width 100%
+      height 2px
+      display block
+      float left
+    .red
+      background-color #f13e32
+    .yellow
+      background-color #ffd700
+    .green
+      background-color #60e37e
+    .blue
+      background-color #40bce4
+
+
+/////////////////////////////////
+// Global Classes
+///////////////////////////////
+
+.tx-u
+  text-transform uppercase
+.txt-0
+  text-transform none !important
+.b0
+  border none !important
+
+.static
+  position static !important
+
+.hide
+  display none !important
+
+.bg-fixed
+  background-attachment fixed !important
+
+.bg-contain
+  background-size contain !important
+
+
+
+
+
+
+
+///////////////////////////////////////////////
+// My Fonts Bar - Need to find what one to buy
+///////////////////////////////////////////////
+#mfPreviewBar
+  opacity 0 !important
+  display none !important
+
+
+///////////////////////////////////////////////
+// SVG Settings
+///////////////////////////////////////////////
+// svg
+//   width 4em
+//   height 4em
+//   margin 40px
+
+svg:hover path
+  fill rgba(accent, 1)
+
+path
+  fill rgba(black, 1)
+
+.accent
+  svg:hover path
+    fill rgba(white, 1)
+
+  path
+    fill rgba(accent, 1)
+
+.white
+  svg:hover path
+    fill rgba(white, 1)
+
+  path
+    fill rgba(accent, 1)

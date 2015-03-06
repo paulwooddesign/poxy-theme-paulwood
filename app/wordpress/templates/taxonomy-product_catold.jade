@@ -1,0 +1,151 @@
+:php
+  /**
+   * Chimera template for displaying Archives
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+  //- Get Tax ID
+  $term_slug = get_query_var( 'term' );
+  $taxonomyName = get_query_var( 'taxonomy' );
+  $current_term = get_term_by( 'slug', $term_slug, $taxonomyName );
+  $term_id = $current_term->term_id;
+  $term_name = $current_term->name;
+
+  //- Testimonial
+  $cat_testimonial = get_tax_meta($term_id,'poxy_product_cat_testimonial');
+  $cat_testimonial_author = get_tax_meta($term_id,'poxy_product_cat_testimonial_author');
+
+  //- Single Layout
+  $cat_page_layout = get_tax_meta($term_id,'poxy_product_cat_page_layout');
+
+  //- Get Banner Image
+  $cat_featured_image = get_tax_meta($term_id,'poxy_cat_featured_image', true);
+  $cat_banner_image = get_tax_meta($term_id,'poxy_cat_banner_image', true);
+
+  if ($cat_featured_image) {
+    $cat_featured_image = $cat_featured_image['src'];
+  }
+
+  if ($cat_banner_image) {
+    $cat_banner_image = $cat_banner_image['src'];
+  }
+
+  global $wp_query, $post;
+  $j=1;
+
+
+  // Get Cat ID
+  $term_id = get_queried_object()->term_id;
+
+  // get Tax Name
+  $taxonomy_name = $wp_query->tax_query->queries[0]['taxonomy'];
+
+  // Get Cat Children
+  $termchildren = get_term_children( $term_id, $taxonomy_name );
+
+  $args = array(
+    'orderby'       => 'name',
+    'hide_empty'    => true,
+    'fields'        => 'all',
+    'parent'         => $term_id,
+    'hierarchical'  => true,
+    'child_of'      => 0,
+    'pad_counts'    => false,
+    'cache_domain'  => 'core'
+  );
+
+  $termchildren = get_terms( $taxonomy_name, $args );
+
+
+  //- Category HAS Children (GRANDPARENT)
+  if ($termchildren) {
+    //- Tax Header
+    $banner_img = $cat_featured_image;
+    $args2 = array('include' => $term_id);
+    $terms = get_terms( $taxonomy_name, $args2);
+
+    foreach ($terms as $term) :
+      poxy_get_taxonomy_image_url($term, 'poxy_banner_bg');
+    endforeach;
+
+    $page_sub_head = get_post_meta($post->ID, "_poxy_page_sub_head", true);
+    $title = $term_name;
+    category_description();
+
+    //- Breadcrumbs
+    get_template_part( 'inc/part-breadcrumbs' );
+
+    //- Section Functions
+    get_template_part( 'inc/cat_pages/part-cat-sections-1' );
+    get_template_part( 'inc/cat_pages/part-cat-sections-2' );
+
+    foreach ( $termchildren as $child ) :
+      get_me_section_layout_1($taxonomy_name, $term_id, $child);
+    endforeach;
+
+  } else {
+
+    //- Category No Children (SOLO)
+    $queried_term = get_query_var($taxonomy_name);
+    $terms = get_the_terms($post->ID, $taxonomy_name);
+    $terms = get_terms($taxonomy_name, 'slug='.$queried_term );
+
+    foreach ($terms as $term) :
+      $slideshow_size = "poy a_12-12 b_12-12 g_12-23 d_11-11 e_11-11 ";
+      $parent_cat = get_term( $term->parent, 'product_cat' );
+      $grand_parent_cat = get_term( $parent_cat->parent, 'product_cat' );
+      $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+      $cat_featured_image = wp_get_attachment_url( $thumbnail_id );
+      $atts = $term->slug;
+      $cat_page_layout = $cat_page_layout;
+
+      switch ($cat_page_layout)
+        case "layout_1":
+          get_template_part( 'inc/cat_pages/part-cat-page-1' );
+          get_me_solo_layout_1($atts, $j, $term);
+          break;
+
+        case "layout_2":
+          get_template_part( 'inc/cat_pages/part-cat-page-2' );
+          get_me_solo_layout_2($term->slug, $j, $term);
+          break;
+
+        case "layout_3":
+          get_template_part( 'inc/cat_pages/part-cat-page-3' );
+          get_me_solo_layout_3($term->slug, $j, $term);
+          break;
+
+        case "layout_4":
+          get_template_part( 'inc/cat_pages/part-cat-page-4' );
+          get_me_solo_layout_4($term->slug, $j, $term);
+          break;
+
+        case "layout_5":
+          get_template_part( 'inc/cat_pages/part-cat-page-5' );
+          get_me_solo_layout_5($term->slug, $j, $term);
+          break;
+
+        case "layout_kits_1":
+          get_template_part( 'inc/cat_pages/part-cat-page-kits-1' );
+          get_me_solo_layout_kits_1($term->slug, $j, $term);
+          break;
+
+        case "layout_kits_2":
+          get_template_part( 'inc/cat_pages/part-cat-page-kits-2' );
+          get_me_solo_layout_kits_2($term->slug, $j, $term);
+          break;
+
+        case "layout_kits_3":
+          get_template_part( 'inc/cat_pages/part-cat-page-kits-3' );
+          get_me_solo_layout_kits_3($term->slug, $j, $term);
+          break;
+
+        default:
+          get_template_part( 'inc/cat_pages/part-cat-page-1' );
+          get_me_solo_layout_1($atts, $j, $term);
+
+    endforeach;
+  }

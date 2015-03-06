@@ -1,0 +1,77 @@
+include mixins/sections.jade
+include mixins/header.jade
+include mixins/mixin-lorem-ipsum.jade
+include mixins/dev.jade
+
++header_right_3('blog/post-3.jpg', 'Live Riveted: Shooting Airstream', 'ADVENTURES IN LIGHT', 'Read More', '#', 'Jarmo Phojaniemi')
+  p Video Pro Lightbanks are the industry standard in light modifiers. Versatile and lightweight, they are perfect when you need controlled soft lighting on small sets. Useful as a separation light or small fill. These Lightbanks are primarily used with single broad-beamed, open-faced instruments.
+
+
+
++section().article
+  +pox(12, 12, 11, 11, 11)
+    +p('6', '5', '6', '6', '6')
+      +lipsum(100, "words")
+    p.mt1
+      img(src="http://chimeralighting.com/wp-content/uploads/2015/01/ram-airstream-front.jpg")
+    +p('6', '5', '6', '6', '6')
+        +lipsum(100, "words")
+    p.mt1
+      img(src="http://chimeralighting.com/wp-content/uploads/2015/01/ram-airstream-creek.jpg")
+    +p('6', '5', '6', '6', '6')
+      +lipsum(100, "words")
+    p.mt1
+      img(src="http://chimeralighting.com/wp-content/uploads/2015/01/ram-airstream-back.jpg")
+    p.mt1
+      img(src="http://chimeralighting.com/wp-content/uploads/2015/01/ram-airstream-truck-bed.jpg")
+
+
+    script(type='text/javascript').
+      var disqus_shortname = 'chimeralighting';
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+
+    #disqus_thread
+
+
+    script(type='text/javascript').
+        var disqus_shortname = 'chimeralighting';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+
+    noscript
+      | Please enable JavaScript to view the
+      a(href='http://disqus.com/?ref_noscript') comments powered by Disqus.
+
+    a.dsq-brlink(href='http://disqus.com')
+      | comments powered by
+      span.logo-disqus Disqus
+
+
+
+  +poxy('14 14 qoxy', '14 14 qoxy', '11 14 pox', '11 14 pox', '11 14 pox')
+    .wrap
+      +pox('p11', 'p11', '12', '12', '11')
+        +h3('4', '4', '4', '4', '1') Recent Posts
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+        p A Unique Perspective on the Golden Globes
+
+
+      +poxy('p11', 'p11', '12', '12', '11')
+        +h3('4 mb2', '4', '4', '4', '1') Twitter Feed
+        a.mt2.twitter-timeline(href='https://twitter.com/ChimeraLighting', data-widget-id='466400885237501952') Tweets by @ChimeraLighting
+        script.
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

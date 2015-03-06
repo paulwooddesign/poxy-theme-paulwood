@@ -1,0 +1,32 @@
+:php
+  /**
+   * Chimera template for displaying the blog page
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+- get_template_part( 'part-header' );
+
+- if (have_posts()):
+- while (have_posts()):
+  - the_post();
+
+  //- - get_template_part( 'part-vip-pages');
+
+  section.article2
+    .sw
+        .cw
+          .poxa12.poxb12.poxc11.poxd11.poxe11
+            - the_content();
+
+          .rel.qoxya14a_14.qoxyb14b_14.poxc11c_14.poxd11d_14.poxe11e_14
+            .wrap
+              .poxap11.poxbp11.poxc12.poxd12.poxe11
+                h3.txa-4.txb-4.txc-4.txd-4.txe-1
+
+- endwhile;
+- endif;
+
+- get_template_part( 'part-author-posts');

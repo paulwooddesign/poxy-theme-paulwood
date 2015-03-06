@@ -1,0 +1,61 @@
+:php
+  /**
+   *
+   * Chimera template part for displaying page head
+   *
+   * @package WordPress
+   * @subpackage Chimera
+   * @since Chimera 1.0
+   */
+
+  // Background Image
+  $slide_background_img = wp_get_attachment_image_src(get_post_meta($post->ID, "_poxy_slide_background_image", true), 'full');
+  $slide_background_img = $slide_background_img[0];
+  if ($slide_background_img) {
+    $slide_background_img = "background-image: url(".$slide_background_img.");";
+  }
+
+  // Sub Title
+  $sub_title = get_post_meta($post->ID, "_poxy_slide_sub_head", true);
+
+  // Copywrite
+  $copywrite_name = get_post_meta($post->ID, "_poxy_slide_image_copywrite_name", true);
+  $copywrite_link = get_post_meta($post->ID, "_poxy_slide_image_copywrite_link", true);
+
+  // Link
+  $button_url = get_post_meta($post->ID, "_poxy_slide_url", true);
+  $button_text = get_post_meta($post->ID, "_poxy_slide_button_text", true);
+
+
+div
+  section.bg-black.white.clear.ofh
+    - if ($copywrite_name) :
+        figcaption.copywrite.zeta.daxy.p4.z6
+          - echo $copywrite_name;
+    - endif;
+    .sw
+      .cw.rel.a_12.b_12.c_58.d_58.e_p11
+        .paxy.fill.shadow-l.z2.hd.he
+        .rel.mb0.qoxya18a_12.qoxyb14b_12.qoxyc14c_58.poxyd11d_12.poxye11e_12
+          figure.rel.image.qaxya34a_p100.qaxyb11b_p100.qaxyc11c_p100._oxyd54d_p100._oxye54e_p100.bgp-cc(style!='<?php echo $slide_background_img; ?>')
+            .paxy.fill.shadow-r.z2.hd.he
+        .rel.poxa18a_12.mb0.poxb14b_12.poxc14c_58.poxd14d_58.poxe11e_34.mlc-0
+          .wrap
+            .rel.paxya12a_12.paxyb12b_12.paxyc12c_58.poxd12d_58.poxe11e_12.ml0-a.ml0-b
+              .rel._oxap11a_p11.z6._oxbp11b_p11._oxcp11c_p11.poxdp11d_p11.poxep11e_p11
+                .rel.poxya12a_pox.poxyb12b_pox.poxyc12c_pox.poxyd11d_pox.poxye11e_pox
+                  h2.txa-11.txb-9.txc-8.txd-8.mt1-d.txe-7.mt1-e(title='')
+                    - the_title();
+                - if ($sub_title) :
+                    .rel.poxya38a_pox.poxyb38b_pox.poxyc38c_pox.poxyd38d_pox.poxye11e_pox
+                      .txa-6.mt2-a.accent.txb-3.mt2-b.txc-3.mt2-c.txd-2.mt2-d.txe-3.mt2-e
+                        - echo $sub_title;
+                - endif;
+                .rel.poxa14a_14.poxyb14b_pox.poxyc14c_pox.poxyd11d_pox.poxye11e_pox
+                  - the_content();
+
+                - if($button_url) :
+                    .rel.poxap11a_14.poxbp11b_14.poxcp11c_14.poxdp11d_14.poxep11e_14
+                      a.poxy.mt1(href!="<?php echo $button_url; ?>", rel="bookmark")
+                        button.p2 Read More
+                - endif;

@@ -1,0 +1,26 @@
+:php
+  get_template_part( 'part-header' );
+  get_template_part( 'part-content' );
+
+  $taxonomy = 'dealer_cat';
+  $queried_term = get_query_var($taxonomy);
+
+  $args = array(
+    'orderby'       => 'name',
+    'parent'        => 0
+  );
+
+  $cats = get_terms($taxonomy, $args);
+
+section.featured-pages
+  .sw.mb1
+    .cw
+      - foreach ($cats as $cat) :
+      - $link = get_term_link( $cat->slug, 'dealer_cat' );
+      - $title = $cat->name;
+      - $count = $cat->count;
+      .rel.poxa14.poxb14.poxc14.poxd12.poxe11.mb4.mt4
+        a(href!="<?php echo $link; ?>")
+          .bold.m0.txa-5.txb-5.txc-4.txd-4.txe-4
+            - echo '<span class="mr4">'.$title . '</span><span class="accent">('. $count . ')</span>';
+      - endforeach;
